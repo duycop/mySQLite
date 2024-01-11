@@ -1,11 +1,16 @@
 package vn.edu.tnut.mysqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         //list all ngay
         listAllrow(null);
+
+        Boolean ok = SmsUtils.checkSmsPermission(this);
+        showToast(this,ok?"check quyền sms: ok":"chưa có quyền với sms");
+    }
+
+    private void showToast(Context context, String message) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
     @Override

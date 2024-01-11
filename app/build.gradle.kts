@@ -42,5 +42,6 @@ dependencies {
     implementation ("androidx.sqlite:sqlite:2.1.0")
     implementation ("androidx.room:room-runtime:2.3.0")
     annotationProcessor ("androidx.room:room-compiler:2.3.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
 
 }
